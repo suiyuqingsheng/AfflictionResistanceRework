@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="MyModName" modversion="1.0" corepackage="false">
+<contentpackage name="Affliction Resistance Rework(Cs)" modversion="0.0.6" corepackage="False" steamworkshopid="3561979908" gameversion="1.10.5.0" expectedhash="3B1FB987205A2BA9E1DDB7A865BF5F7F">
+  <Item file="%ModDir%/Content/dummyitem.xml" />
 </contentpackage>

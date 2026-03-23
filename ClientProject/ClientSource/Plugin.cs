@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Barotrauma;
 
-namespace MyModName
+namespace AfflictionResistanceRework
 {
-    public partial class Plugin : IAssemblyPlugin
+    public partial class AfflictionResistanceRework : IAssemblyPlugin
     {
         // Client-specific code
     }

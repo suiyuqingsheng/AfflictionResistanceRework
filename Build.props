@@ -1,9 +1,13 @@
 <Project>
     <PropertyGroup>
-        <!-- IMPORTANT: Should point to <Barotrauma_Install>\LocalMods\<MyModName>\ -->
+        <!-- IMPORTANT: Should point to <Barotrauma_Install>\LocalMods\<AfflictionResistanceRework>\ -->
         <!-- IMPORTANT: ModDeplyDir Path must end with '\' -->
-        <ModDeployDir>..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\</ModDeployDir>
+<<<<<<< HEAD
+        <ModDeployDir>..\LocalMods\Affliction Resistance Rework\</ModDeployDir>
+=======
+        <ModDeployDir>..\LocalMods\Affliction Resistance Rework(Cs)\</ModDeployDir>
+>>>>>>> remotes/origin/main
         <!-- IMPORTANT: Avoid the use of special (IE: / : ; , \ < > ?) (periods "." are good) and non-english characters in the AssemblyName.-->
-        <AssemblyName>MyModName</AssemblyName>
+        <AssemblyName>AfflictionResistanceRework</AssemblyName>
     </PropertyGroup>
 </Project>

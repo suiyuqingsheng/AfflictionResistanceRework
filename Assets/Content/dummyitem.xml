@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item identifier="AfflictionResistanceReworkCS_DummyItem" name="dummy item">
+    <Sprite texture="Content/DefaultWorkshopPreviewImage.png" sourcerect="0,0,512,512" />
+  </Item>
+</Items>
