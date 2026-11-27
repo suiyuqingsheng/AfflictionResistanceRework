@@ -9,15 +9,22 @@ namespace AfflictionResistanceRework;
 
 public partial class Plugin : IBarotraumaPlugin
 {
-    public static readonly IDebugConsole DebugConsole = PluginServiceProvider.GetService<IDebugConsole>();
+    private static IDebugConsole? debugConsole;
+    private static IHarmonyProvider? harmonyProvider;
 
-    private const string harmony_id = "AfflictionResistanceRework";
-    private Harmony? harmonyInstance = null;
+    /// <summary>
+    /// 插件的调试控制台。服务采用惰性获取，因为插件数据只有在插件被加载之后才会注册。
+    /// </summary>
+    public static IDebugConsole DebugConsole => debugConsole ??= PluginServiceProvider.GetService<IDebugConsole>();
+
+    /// <summary>
+    /// 提供插件的 Harmony 实例。通过它打的所有补丁会在插件卸载时自动移除。
+    /// </summary>
+    public static IHarmonyProvider HarmonyProvider => harmonyProvider ??= PluginServiceProvider.GetService<IHarmonyProvider>();
 
     public void Init()
     {
-        harmonyInstance = new Harmony(harmony_id);
-        harmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
+        HarmonyProvider.PatchAll();
         DebugConsole.NewMessage("AfflictionResistanceRework loaded!", Color.Lime);
         InitProjectSpecific();
     }
@@ -26,8 +33,6 @@ public partial class Plugin : IBarotraumaPlugin
 
     public void Dispose()
     {
-        harmonyInstance?.UnpatchSelf();
-        harmonyInstance = null;
         DebugConsole.NewMessage("AfflictionResistanceRework disposed!", Color.Lime);
     }
 
